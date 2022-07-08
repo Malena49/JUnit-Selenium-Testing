@@ -1,4 +1,4 @@
-import fr.amazon.Browser;
+import utils.Browser;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
