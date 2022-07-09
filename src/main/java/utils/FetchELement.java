@@ -32,4 +32,12 @@ public class FetchELement {
             return false;
         }
     }
+    public boolean areElementsPresent(String type, String value){
+        try {
+            getWebElements(type, value);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

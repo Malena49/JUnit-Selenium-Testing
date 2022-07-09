@@ -8,18 +8,21 @@ import pageObjects.HomePageElements;
 import utils.FetchELement;
 
 public class HomePageEvents {
-    FetchELement elementFetch = new FetchELement();
+
+
     public void clickOnRejectCookies(){
+        FetchELement elementFetch = new FetchELement();
         if (elementFetch.isElementPresent("ID", HomePageElements.Reject_cookie_btn)){
         elementFetch.getWebElement("ID", HomePageElements.Reject_cookie_btn).click();}
     }
     public void isHomePageOpened(){
-        Assertions.assertEquals(HomePageElements.HomePageTitle, Browser.title());
+        Browser webBrowser= new Browser();
+        Assertions.assertEquals(HomePageElements.HomePageTitle, webBrowser.title());
     }
     public void SearchByKeywordField(String item){
+        FetchELement elementFetch = new FetchELement();
         WebElement search = elementFetch.getWebElement("ID", HomePageElements.searchField);
-        search.sendKeys(item);
-        search.sendKeys(Keys.ENTER);
+        search.sendKeys(item + Keys.ENTER);
     }
 
 }
